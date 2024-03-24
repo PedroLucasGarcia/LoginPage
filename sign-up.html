@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font (Fonte)-->
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">
+    <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
@@ -12,8 +14,9 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form id="form" class="form">
             <h1>Crie sua Conta</h1>
+
             <div class="social-icons">
                 <a href="#" class="icon">
                     <i class="fa-brands fa-google"></i>
@@ -28,52 +31,37 @@
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
+
             <span>Ou use o email para se registrar</span>
+
             <input type="text" placeholder="Nome" class="required" oninput="nameValidate">
             <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
+
             <input type="email" placeholder="Email" class="required">
             <span class="span-required">Digite um email válido</span>
+
             <input type="password" placeholder="Senha" class="required">
             <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
+
             <input type="password" placeholder="Confirme sua Senha" class="required">
             <span class="span-required">Senhas devem ser compatíveis</span>
-            <button>Entrar</button>
+
+            <button class="btn form-btn">Entrar</button>
+
             <span class="sign-in" style="margin-top: 10px;">Já possui uma conta? <a href="sign-in.html" style="color: #2d7ba8;">Conecte-se</a>.</span>
         </form>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel">
                     <h1>Crie sua conta grátis!</h1>
+
                     <p>Já possui uma conta? Clique no botão abaixo e conecte-se.</p>
-                    <a href="sign-in.html"><button class="hidden">Conectar-se</button></a>
+
+                    <a href="sign-in.html"><button class="btn toggle-btn">Conectar-se</button></a>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-    const form  = document.getElementById('form');
-    const campos = document.querySelectorAll('.required');
-    const spans = document.querySelectorAll('.span-required');
-    const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
-
-    function setError(index){
-        campos[index].style.border = '2px solid red';
-        spans[index].style.display = 'block';
-    }
-
-    function removeError(index){
-        campos[index].style.border = '';
-        spans[index].style.display = 'none';
-}
-
-    function nameValidate(){
-        if(campos[0].value.length < 3){
-            setError(0);
-        }
-        else {
-            removeError(0);
-        }
-    }
-</script>
+<script src="script.js"></script>
 </html>
