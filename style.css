@@ -1,126 +1,162 @@
+/*geral*/
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; /*O preenchimento(padding) e a borda(border) serão incluídos na largura(width) e na altura(height)*/
 }
 
+/*fundo*/
 body{
     background-color: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; /*Especifica que os itens filhos do contêiner devem ser dispostos em uma única coluna verticalmente*/
     height: 100vh;
 }
 
+/*container*/
 .container{
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    position: relative;
-    overflow: hidden;
+    position: relative; /*Define o posicionamento de um elemento de forma relativa a sua posição original na página*/
+    overflow: hidden;   /*Qualquer conteúdo que ultrapasse os limites do elemento será cortado e não será exibido*/
     width: 700px;
     max-width: 100%;
-    min-height: 480px;
-    border: 1px solid red;
+    min-height: 550px;
 }
 
+/*formulário*/
+.form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /*Especifica que os itens filhos do contêiner devem ser dispostos em uma única coluna verticalmente*/
+    padding: 0px 30px;
+    height: 100%;
+    position: absolute; /*Permite posicionar um elemento em relação ao seu ancestral mais próximo que possui uma propriedade position*/
+    width: 350px;
+}
+
+/*h1*/
+.container h1{
+     font-size: 34px;
+     letter-spacing: 0.5px;
+} 
+
+/*input*/
+.container input{
+    background-color: #eee;
+    border: none;
+    margin: 12px 0;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;  /*Remove a linha de contorno que alguns navegadores colocam por padrão*/
+}
+
+/*mensagem para logor e criar conta - só aparecerá em dispositivos móveis*/
 .container form span.sign-in, .container form span.sign-up{
     display: none;
 }
 
+/*parágrafo*/
 .container p{
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
+    letter-spacing: 0.5px;
 }
 
+/*spans*/
 .container span{
-    font-size: 12px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
+/*link*/
 .container a{
     color: #333;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
 
-.container button{
-    background-color: #2d7ba8;
-    color: #fff;
+/*botões*/
+.btn{
     font-size: 12px;
     padding: 10px 45px;
-    border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    border: 1px solid transparent;
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+    color: #fff;
 }
-
-.container button.hidden{
+.form-btn{
+    background-color: #5cacc0;
+}
+.form-btn:hover{
+    scale: 110%;    /*quando passar o mouse a escala cresce 10%*/
+    transition-duration: 200ms; /*duração da animação*/
+    background-color: #156594;
+}
+.toggle-btn{
     background-color: transparent;
     border-color: #fff;
 }
-
-.container form{
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0px 80px;
-    height: 100%;
-    position: absolute;
+.toggle-btn:hover{
+    scale: 110%;
+    transition-duration: 200ms;
 }
 
-.container input{
-    background-color: #eee;
-    border: none;
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
-    width: 100%;
-    outline: none;
-}
-
-.span-required{
+/*span da validação do formulário*/
+span.span-required{
     font-size: 12px;
-    margin: 3px 0 0 1px;
     color: red;
     display: none;
 }
 
+/*icones*/
 .social-icons{
     margin: 20px 0; 
 }
-
 .social-icons a{
     border: 1px solid #ccc;
     border-radius: 20%;
-    display: inline-flex;
+    display: inline-flex;   /*permite que um elemento seja exibido como um elemento de linha ocupando apenas o espaço necessário na linha, enquanto ainda permite que seus filhos sejam organizados em um layout flexível, oferecendo controle sobre o posicionamento e dimensionamento desses filhos.*/
     justify-content: center;
     align-items: center;
     margin: 0 3px;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+}
+.social-icons a:hover{
+    border: none;
+    background-color: #5cacc0;
+    background: linear-gradient(to right, #5cacc0, #4169be);
+    color: #fff;
+    scale: 110%;
+    transition-duration: 200ms;
 }
 
+/*toggle - parte destacada do login*/
 .toggle-container{
     position: absolute;
     left: 50%;
     width: 50%;
     height: 100%;  
     overflow: hidden;
-    border-radius: 150px 0 0 150px;
+    border-radius: 180px 0 0 120px;
 }
-
 .toggle{
     background-color: #5cacc0;
     height: 100%;
@@ -130,12 +166,6 @@ body{
     height: 100%;
     width: 200%;
 }
-
-.toggle:hover{
-    scale: 110%;            /* quando passar o mouse a escala cresce 10% */
-    transition-duration: 200ms;
-}
-
 .toggle-panel{
     position: absolute;
     width: 50%;
@@ -148,33 +178,60 @@ body{
     text-align: center;
 }
 
+/*media para dispositivos screen e small*/
 @media screen and (max-width: 767.98px) {
     body{
         background-color: #fff;
         background: none;
+        display: block;
     }
     .container{
-        width: 100%;
-        min-height: 520px;
-        max-height: 80%;
         border: none;
         box-shadow: none;
+        width: 100%;
+        height: 100%;
+        line-height: 20px;
     }
-    .container form{
+    .form{
         width: 100%;
         padding: 0 30px;
     }
     .container form span.sign-in, .container form span.sign-up{
         display: block;
     }
-    .container h1{
-        font-size: 26px;
+    .toggle-container{
+        display: none;
     }
-    .social-icons a{
-        width: 38px;
-        height: 38px;
+    .container span{
+        text-align: center;
+    }
+}
+
+/*media para dispositivos small na horizontal*/
+@media (max-height: 500px) {
+    body{
+        background-color: #fff;
+        background: none;
+        display: block;
+    }
+    .container{
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+        line-height: 20px;
+    }
+    .form{
+        width: 100%;
+        padding: 0 30px;
+    }
+    .container form span.sign-in, .container form span.sign-up{
+        display: block;
     }
     .toggle-container{
         display: none;
+    }
+    .container span{
+        text-align: center;
     }
 }
