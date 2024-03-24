@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font (Fonte)-->
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap" rel="stylesheet">
+    <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
@@ -12,8 +14,9 @@
 </head>
 <body>
     <div class="container">
-        <form id="form">
-            <h1>Conectar-se</h1>
+        <form id="form" class="form">
+            <h1>Conectar</h1>
+
             <div class="social-icons">
                 <a href="#" class="icon" title="Google">
                     <i class="fa-brands fa-google"></i>
@@ -28,21 +31,30 @@
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
+
             <span>Ou use o email para se conectar</span>
+
             <input type="email" placeholder="Email" class="required">
             <span class="span-required">Digite um email válido</span>
+
             <input type="password" placeholder="Senha" class="required">
             <span class="span-required">Senha inválida</span>
+
             <a href="#" style="color: #2d7ba8; border-bottom: 1px solid #2d7ba8;">Esqueci minha senha</a>
-            <button>Entrar</button>
+
+            <button class="btn form-btn">Entrar</button>
+
             <span class="sign-up" style="margin-top: 10px;">Ainda não tem conta?<a href="sign-up.html" style="color: #2d7ba8"> Cadastre-se</a>.</span>
+
         </form>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel">
                     <h1>Olá, bem vindo!</h1>
+
                     <p>Ainda não tem conta? Clique no botão abaixo e cadastre-se.</p>
-                    <a href="sign-up.html"><button class="hidden">Cadastre-se</button></a>
+
+                    <a href="sign-up.html"><button class="btn toggle-btn">Cadastre-se</button></a>
                 </div>
             </div>
         </div>
