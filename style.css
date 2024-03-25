@@ -13,7 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /*Especifica que os itens filhos do contêiner devem ser dispostos em uma única coluna verticalmente*/
+    flex-direction: column; /*todo o conteúdo será disposto em uma única coluna verticalmente*/
     height: 100vh;
 }
 
@@ -24,9 +24,9 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative; /*Define o posicionamento de um elemento de forma relativa a sua posição original na página*/
     overflow: hidden;   /*Qualquer conteúdo que ultrapasse os limites do elemento será cortado e não será exibido*/
-    width: 700px;
+    width: 750px;
     max-width: 100%;
-    min-height: 550px;
+    min-height: 580px;
 }
 
 /*formulário*/
@@ -58,9 +58,10 @@ body{
     border-radius: 8px;
     width: 100%;
     outline: none;  /*Remove a linha de contorno que alguns navegadores colocam por padrão*/
+    
 }
 
-/*mensagem para logor e criar conta - só aparecerá em dispositivos móveis*/
+/*mensagem para logar e criar conta - só aparecerá em dispositivos móveis*/
 .container form span.sign-in, .container form span.sign-up{
     display: none;
 }
@@ -119,7 +120,7 @@ body{
 }
 
 /*span da validação do formulário*/
-span.span-required{
+.span-required{
     font-size: 12px;
     color: red;
     display: none;
